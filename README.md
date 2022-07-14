@@ -14,7 +14,7 @@ Aluno: Valério Nogueira Rodrigues Júnior
 
 Simulação de uma estação de triagem como projeto final da disciplina de Automação Industrial, utilizando FactoryIO e TIA Portal v17
 
-![Funcionamento do sistema]()
+![Funcionamento do sistema](https://github.com/valeriojr/estacao_de_triagem/blob/61a1977e4b2de3b6a5f5ca568538b6fb4a768f37/EstacaoDeTriagem.gif)
 
 ## Descrição do problema
 

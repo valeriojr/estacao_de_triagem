@@ -148,4 +148,4 @@ Incrementa o contador da rampa correspondente toda vez que o objeto passa por el
 ![Contadores](/ladder_network5.png)
 
 ## Resultado
-![![Apresentação do projeto](https://img.youtube.com/vi/0x-oRdty2iY/0.jpg)](https://www.youtube.com/watch?v=0x-oRdty2iY)
+[Apresentação do projeto (YouTube)](https://www.youtube.com/watch?v=0x-oRdty2iY)

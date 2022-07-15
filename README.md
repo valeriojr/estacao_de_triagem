@@ -121,23 +121,31 @@ O código em Ladder foi dividido em 5 redes, sendo elas:
 
 Bloco que faz a integração entre os dois *softwares*. Disponível no *template* o projeto disponibilizado pelo *FactoryIO*, não deve ser alterado.
 
+![Integração com *FactoryIO*](/ladder_network1.png) 
+
 ### Liga/Desliga
 
 Rede que cuida da parte da ligação e desligamento do sistema. Ativa as esteiras principais e as esteiras dos separadores quando necessário.
+
+![Liga/Desliga](/ladder_network2.png)
 
 ### Classificação do objeto
 
 Realiza a identificação do objeto através de um sensor ótico. A leitura do sensor é um inteiro != 0 quando um objeto é detectado. Guarda o tipo na variável `Ramp` (leitura do sensor mód. 3)
 
+![Classificação do objeto](/ladder_network3.png)
+
 ### Separadores
 
 Ativa os separador correspondente quando o tipo do objeto é identificado e assim o mantém por 1 segundo depois que o sensor de saída detecta que um objeto está "entrou" em uma das 3 rampas, para garantir que ele caia.
+
+![Separadores](/ladder_network4.png)
 
 ### Contadores
 
 Incrementa o contador da rampa correspondente toda vez que o objeto passa por ela e "esquece" o tipo do objeto atual (reativa a esteira de entrada, fazendo com que o sensor ótico detecte um novo objeto).
 
-
+![Contadores](/ladder_network5.png)
 
 ## Resultado
 ![![Apresentação do projeto](https://img.youtube.com/vi/0x-oRdty2iY/0.jpg)](https://www.youtube.com/watch?v=0x-oRdty2iY)

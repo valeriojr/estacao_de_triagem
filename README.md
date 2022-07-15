@@ -22,6 +22,8 @@ O problema consiste em automatizar uma estação de triagem para separar objetos
 
 ## Esquemático
 
+![Esquemático do projeto](/esquematico.jpg)
+
 ## Tabelas de endereçamento
 A tabela de endereçamento do projeto foi construída com base nas entradas e saídas presentes na cena do *FactoryIO*. A seguir é apresentada a tabela com o nome da *tag*, seu tipo e o endereço lógico, obtida utilizando a ferramenta de exportação do TIA Portal
 | Name | Data Type | Logical Address |

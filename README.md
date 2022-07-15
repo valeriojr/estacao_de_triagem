@@ -22,6 +22,8 @@ O problema consiste em automatizar uma estação de triagem para separar objetos
 
 ## Esquemático
 
+![Esquemático do projeto](/esquematico.jpg)
+
 ## Tabelas de endereçamento
 A tabela de endereçamento do projeto foi construída com base nas entradas e saídas presentes na cena do *FactoryIO*. A seguir é apresentada a tabela com o nome da *tag*, seu tipo e o endereço lógico, obtida utilizando a ferramenta de exportação do TIA Portal
 | Name | Data Type | Logical Address |
@@ -71,7 +73,71 @@ Para ver a tabela completa, clique [aqui](https://docs.google.com/spreadsheets/d
 
 ## Tabelas verdade
 
+A seguir são apresentadas as tabelas verdade utilizadas
+
+| Start | Stop | On | On (Saída) |
+| --- | --- | --- | --- |
+| F | F | F | F |
+| F | F | V | F |
+| F | V | F | F |
+| F | V | V | V |
+| V | F | F | F |
+| V | F | V | F |
+| V | V | F | V |
+| V | V | V | V |
+
+| On | Emitter (Saída) | Entry Conveyor (Saída) | Exit Conveyor (Saída) |
+| --- | --- | --- | --- |
+| V | V | V | V |
+| F | F | F | F |
+
+| On | Sorter1 Turn | Sorter1 Belt (Saída) |
+| --- | --- | --- |
+| F | F | F |
+| F | V | F |
+| V | F | F |
+| V | V | V |
+
+| On | Sorter2 Turn | Sorter2 Belt (Saída) |
+| --- | --- | --- |
+| F | F | F |
+| F | V | F |
+| V | F | F |
+| V | V | V |
+
+| On | Sorter3 Turn | Sorter3 Belt (Saída) |
+| --- | --- | --- |
+| F | F | F |
+| F | V | F |
+| V | F | F |
+| V | V | V |
+
+
 ## Programação em Ladder
+
+O código em Ladder foi dividido em 5 redes, sendo elas:
+
+### Integração com *FactoryIO*
+
+Bloco que faz a integração entre os dois *softwares*. Disponível no *template* o projeto disponibilizado pelo *FactoryIO*, não deve ser alterado.
+
+### Liga/Desliga
+
+Rede que cuida da parte da ligação e desligamento do sistema. Ativa as esteiras principais e as esteiras dos separadores quando necessário.
+
+### Classificação do objeto
+
+Realiza a identificação do objeto através de um sensor ótico. A leitura do sensor é um inteiro != 0 quando um objeto é detectado. Guarda o tipo na variável `Ramp` (leitura do sensor mód. 3)
+
+### Separadores
+
+Ativa os separador correspondente quando o tipo do objeto é identificado e assim o mantém por 1 segundo depois que o sensor de saída detecta que um objeto está "entrou" em uma das 3 rampas, para garantir que ele caia.
+
+### Contadores
+
+Incrementa o contador da rampa correspondente toda vez que o objeto passa por ela e "esquece" o tipo do objeto atual (reativa a esteira de entrada, fazendo com que o sensor ótico detecte um novo objeto).
+
+
 
 ## Resultado
 ![![Apresentação do projeto](https://img.youtube.com/vi/0x-oRdty2iY/0.jpg)](https://www.youtube.com/watch?v=0x-oRdty2iY)
